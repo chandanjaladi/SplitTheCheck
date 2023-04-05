@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Restaurant.delete_all
+#...
+Restaurant.create!(name: 'Cheesecake Factory', location: 'DC',will_split: 5, will_not_split: 1)
+#...
