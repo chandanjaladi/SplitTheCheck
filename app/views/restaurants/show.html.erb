@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+
+<h1 id = "heading"> <br>&nbsp;Details of Restaurant<br><br></h1>
+<div id="showPage">
   <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
+  <%= @restaurant.name %><br><br>
 
-<p>
+
+
   <strong>Location:</strong>
-  <%= @restaurant.location %>
-</p>
+  <%= @restaurant.location %><br><br>
 
-<p>
-  <strong>Will split:</strong>
-  <%= @restaurant.will_split %>
-</p>
 
-<p>
-  <strong>Will not split:</strong>
-  <%= @restaurant.will_not_split %>
-</p>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+  <strong>Will split bill votes:</strong>
+  <%= @restaurant.will_split %><br><br>
+
+
+
+  <strong>Will not split bill votes:</strong>
+  <%= @restaurant.will_not_split %><br>
+
+</div>
+<br>
+<%= button_to 'Edit', edit_restaurant_path(@restaurant), method: 'get', class: 'search-button' %>
+<%= button_to 'Show all Restaurants', restaurants_path, method: 'get', class: 'search-button' %>
