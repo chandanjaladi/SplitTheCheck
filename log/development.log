@@ -2019,3 +2019,477 @@ Processing by RestaurantsController#index as HTML
 Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 8172)
 
 
+Started GET "/restaurants" for ::1 at 2023-04-05 20:38:07 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:17
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:57
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 10036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 15639)
+Completed 200 OK in 69ms (Views: 40.5ms | ActiveRecord: 1.0ms | Allocations: 18875)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-05 20:47:27 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1844)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1926)
+Completed 500 Internal Server Error in 5ms (Allocations: 3536)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p id="notice"><%= notice %></p>
+
+<h1>Restaurants</h1>
+<% if (@restaurants.nil? || @restaurants.empty?) %>
+<div class="card">
+  <p>
+    <strong>No restaurants match the search query.</strong>
+    <% if Restaurant.all.empty? %>
+    <strong>There are no restaurants in the table yet. Please add one.</strong>
+    <% else %>
+    <strong>No restaurants match the search query.</strong>
+    <% end %>
+  </p>
+</div>
+<% else %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Will Split</th>
+      <th>Will Not Split</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td> <h4><%= restaurant.name %></h4> </td>
+      <td><%= restaurant.location %></td>
+      <td>
+        <%= restaurant.will_split %>
+        <%= button_to 'Vote "Will Split"', will_split_path(restaurant), action: :will_split, class: 'will-split-button'}%>
+      </td>
+      <td>
+        <%= restaurant.will_not_split %>
+        <%= button_to 'Vote "Won\'t Split"'%>
+      </td>
+      <td>
+        <ul><li><%= link_to 'Show Details', restaurant %></li>
+          <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+          <!-- <li><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> </li> -->
+        </ul>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+
+<br>
+
+
+
+<section>
+  <h2>Find a Restaurant</h2>
+  <%= form_with id: 'search-form', url: '/search', method: :get do |form| %>
+  <div class="form-group">
+    <%= form.label :query_name, 'Name:' %>
+    <%= form.text_field :query_name %>
+  </div>
+  <div class="form-group">
+    <%= form.label :query_location, 'Location:' %>
+    <%= form.text_field :query_location %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.submit 'Search', disabled: Restaurant.all.empty? %>
+  </div>
+  <% end %>
+</section>
+<section id="add-restaurant-section">
+  Is a restaurant missing from this list?
+  <%= button_to 'Add a Restaurant', new_restaurant_path, method: 'get' %>
+</section>
+
+):
+1:    <p id="notice"><%= notice %></p>
+2:    
+3:    <h1>Restaurants</h1>
+4:    <% if (@restaurants.nil? || @restaurants.empty?) %>
+5:    <div class="card">
+6:      <p>
+7:        <strong>No restaurants match the search query.</strong>
+8:        <% if Restaurant.all.empty? %>
+9:        <strong>There are no restaurants in the table yet. Please add one.</strong>
+10:        <% else %>
+11:        <strong>No restaurants match the search query.</strong>
+12:        <% end %>
+13:      </p>
+14:    </div>
+15:    <% else %>
+16:    <table>
+17:      <thead>
+18:        <tr>
+19:          <th>Name</th>
+20:          <th>Location</th>
+21:          <th>Will Split</th>
+22:          <th>Will Not Split</th>
+23:    
+24:        </tr>
+25:      </thead>
+26:    
+27:      <tbody>
+28:        <% @restaurants.each do |restaurant| %>
+29:        <tr>
+30:          <td> <h4><%= restaurant.name %></h4> </td>
+31:          <td><%= restaurant.location %></td>
+32:          <td>
+33:            <%= restaurant.will_split %>
+34:            <%= button_to 'Vote "Will Split"', will_split_path(restaurant), action: :will_split, class: 'will-split-button'}%>
+35:          </td>
+36:          <td>
+37:            <%= restaurant.will_not_split %>
+38:            <%= button_to 'Vote "Won\'t Split"'%>
+39:          </td>
+40:          <td>
+41:            <ul><li><%= link_to 'Show Details', restaurant %></li>
+42:              <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
+43:              <!-- <li><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> </li> -->
+44:            </ul>
+45:          </td>
+46:        </tr>
+47:        <% end %>
+48:      </tbody>
+49:    </table>
+50:    <% end %>
+51:    
+52:    <br>
+53:    
+54:    
+55:    
+56:    <section>
+57:      <h2>Find a Restaurant</h2>
+58:      <%= form_with id: 'search-form', url: '/search', method: :get do |form| %>
+59:      <div class="form-group">
+60:        <%= form.label :query_name, 'Name:' %>
+61:        <%= form.text_field :query_name %>
+62:      </div>
+63:      <div class="form-group">
+64:        <%= form.label :query_location, 'Location:' %>
+65:        <%= form.text_field :query_location %>
+66:      </div>
+67:      <br>
+68:      <div class="form-group">
+69:        <%= form.submit 'Search', disabled: Restaurant.all.empty? %>
+70:      </div>
+71:      <% end %>
+72:    </section>
+73:    <section id="add-restaurant-section">
+74:      Is a restaurant missing from this list?
+75:      <%= button_to 'Add a Restaurant', new_restaurant_path, method: 'get' %>
+76:    </section>
+  
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:34: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/restaurants/index.html.erb:43: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/restaurants/index.html.erb:47: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:50: syntax error, unexpected end, expecting ')'
+app/views/restaurants/index.html.erb:79: syntax error, unexpected end, expecting ')'
+Started GET "/restaurants" for ::1 at 2023-04-05 20:48:07 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 55.9ms | Allocations: 9339)
+  Rendered layout layouts/application.html.erb (Duration: 56.2ms | Allocations: 9420)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 1.3ms | Allocations: 10676)
+
+
+  
+ActionView::Template::Error (undefined method `will_split_path' for #<ActionView::Base:0x007f9e38693b00>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split_path(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:48:27 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 5010)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 5091)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.3ms | Allocations: 6239)
+
+
+  
+ActionView::Template::Error (undefined method `will_split' for #<ActionView::Base:0x007f9e38df3be8>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:48:54 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (1.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 46.5ms | Allocations: 5007)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 5087)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 1.4ms | Allocations: 6223)
+
+
+  
+ActionView::Template::Error (undefined method `vote_will_split_path' for #<ActionView::Base:0x007f9e2c88f028>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', vote_will_split_path(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:51:30 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 48.0ms | Allocations: 9616)
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 9879)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 3.1ms | Allocations: 11526)
+
+
+  
+ActionView::Template::Error (undefined method `will_split_path' for #<ActionView::Base:0x007f9e38eca760>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split_path(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:51:44 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 23.2ms | Allocations: 4998)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 5078)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.3ms | Allocations: 6214)
+
+
+  
+ActionView::Template::Error (undefined method `will_split' for #<ActionView::Base:0x007f9e386e06d0>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:51:45 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 4427)
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 4509)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 4898)
+
+
+  
+ActionView::Template::Error (undefined method `will_split' for #<ActionView::Base:0x007f9e38f59410>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:51:47 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 4426)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4508)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 4896)
+
+
+  
+ActionView::Template::Error (undefined method `will_split' for #<ActionView::Base:0x007f9e386ec548>):
+    31:       <td><%= restaurant.location %></td>
+    32:       <td>
+    33:         <%= restaurant.will_split %>
+    34:         <%= button_to 'Vote "Will Split"', will_split(restaurant), action: :will_split, class: 'will-split-button' %>
+    35:       </td>
+    36:       <td>
+    37:         <%= restaurant.will_not_split %>
+  
+app/views/restaurants/index.html.erb:34
+app/views/restaurants/index.html.erb:28
+Started GET "/restaurants" for ::1 at 2023-04-05 20:53:40 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (1.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:69
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 24.9ms | Allocations: 10286)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 13797)
+Completed 200 OK in 37ms (Views: 35.0ms | ActiveRecord: 2.7ms | Allocations: 15428)
+
+
+Started POST "/vote_will_split/2" for ::1 at 2023-04-05 20:53:43 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:79:in `set_restaurant'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mRestaurant Update (15.9ms)[0m  [1m[33mUPDATE "restaurants" SET "will_split" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["will_split", 6], ["updated_at", "2023-04-06 00:53:43.933683"], ["id", 2]]
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 43ms (ActiveRecord: 25.4ms | Allocations: 6358)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-05 20:53:43 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:69
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 16.7ms | Allocations: 4569)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 7574)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.3ms | Allocations: 8004)
+
+
+Started POST "/vote_will_split/7" for ::1 at 2023-04-05 20:53:45 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"7"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:79:in `set_restaurant'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mRestaurant Update (22.5ms)[0m  [1m[33mUPDATE "restaurants" SET "will_split" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["will_split", 2], ["updated_at", "2023-04-06 00:53:45.507472"], ["id", 7]]
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 43ms (ActiveRecord: 29.6ms | Allocations: 5697)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-05 20:53:45 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:4
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:28
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:69
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 7562)
+Completed 200 OK in 31ms (Views: 30.1ms | ActiveRecord: 0.3ms | Allocations: 7990)
+
+

@@ -1,7 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Restaurants</h1>
-
+<% if (@restaurants.nil? || @restaurants.empty?) %>
+<div class="card">
+  <p>
+    <strong>No restaurants match the search query.</strong>
+    <% if Restaurant.all.empty? %>
+    <strong>There are no restaurants in the table yet. Please add one.</strong>
+    <% else %>
+    <strong>No restaurants match the search query.</strong>
+    <% end %>
+  </p>
+</div>
+<% else %>
 <table>
   <thead>
     <tr>
@@ -15,27 +26,28 @@
 
   <tbody>
     <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td> <h4><%= restaurant.name %></h4> </td>
-        <td><%= restaurant.location %></td>
-        <td>
-          <%= restaurant.will_split %>
-          <%= button_to 'Vote "Will Split"'%>
-        </td>
-        <td>
-          <%= restaurant.will_not_split %>
-          <%= button_to 'Vote "Won\'t Split"'%>
-        </td>
-        <td>
-          <ul><li><%= link_to 'Show Details', restaurant %></li>
+    <tr>
+      <td> <h4><%= restaurant.name %></h4> </td>
+      <td><%= restaurant.location %></td>
+      <td>
+        <%= restaurant.will_split %>
+        <%= button_to 'Vote "Will Split"', vote_will_split_path(restaurant), action: :vote_will_split, class: 'will-split-button' %>
+      </td>
+      <td>
+        <%= restaurant.will_not_split %>
+        <%= button_to 'Vote "Won\'t Split"'%>
+      </td>
+      <td>
+        <ul><li><%= link_to 'Show Details', restaurant %></li>
           <li><%= link_to 'Edit', edit_restaurant_path(restaurant) %></li>
           <!-- <li><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> </li> -->
-          </ul>
-        </td>
-      </tr>
+        </ul>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <br>
 
@@ -44,18 +56,18 @@
 <section>
   <h2>Find a Restaurant</h2>
   <%= form_with id: 'search-form', url: '/search', method: :get do |form| %>
-    <div class="form-group">
-      <%= form.label :query_name, 'Name:' %>
-      <%= form.text_field :query_name %>
-    </div>
-    <div class="form-group">
-      <%= form.label :query_location, 'Location:' %>
-      <%= form.text_field :query_location %>
-    </div>
-    <br>
-    <div class="form-group">
-      <%= form.submit 'Search' %>
-    </div>
+  <div class="form-group">
+    <%= form.label :query_name, 'Name:' %>
+    <%= form.text_field :query_name %>
+  </div>
+  <div class="form-group">
+    <%= form.label :query_location, 'Location:' %>
+    <%= form.text_field :query_location %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= form.submit 'Search', disabled: Restaurant.all.empty? %>
+  </div>
   <% end %>
 </section>
 <section id="add-restaurant-section">

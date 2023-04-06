@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: [:show, :edit, :update]
+  before_action :set_restaurant, only: %i[ show edit update vote_will_split ]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -59,6 +59,19 @@ class RestaurantsController < ApplicationController
       format.json { render :index, status: :ok }
     end
   end
+
+  def vote_will_split
+    respond_to do |format|
+      if Restaurant.update(@restaurant[:id], :will_split => @restaurant[:will_split] + 1)
+        format.html { redirect_to restaurants_url, notice: "Thank you for voting!" }
+        format.json { render :index, status: :ok, location: @restaurant }
+      else
+        format.html { redirect_to restaurants_url, status: :unprocessable_entity, notice: "Something went wrong..." }
+        format.json { render :index, json: @restaurant.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
