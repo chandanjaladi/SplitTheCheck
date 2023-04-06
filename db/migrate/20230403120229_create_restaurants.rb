@@ -5,8 +5,12 @@ class CreateRestaurants < ActiveRecord::Migration[6.1]
       t.string :location
       t.integer :will_split
       t.integer :will_not_split
+      change_column_default :restaurants, :will_split, from: nil, to: 0
+      change_column_default :restaurants, :will_not_split, from: nil, to: 0
 
       t.timestamps
+
     end
   end
+
 end
