@@ -39,4 +39,26 @@
 
 <br>
 
-<%= button_to 'Add a New Restaurant', new_restaurant_path, method: 'get' %>
+
+
+<section>
+  <h2>Find a Restaurant</h2>
+  <%= form_with id: 'search-form', url: '/search', method: :get do |form| %>
+    <div class="form-group">
+      <%= form.label :query_name, 'Name:' %>
+      <%= form.text_field :query_name %>
+    </div>
+    <div class="form-group">
+      <%= form.label :query_location, 'Location:' %>
+      <%= form.text_field :query_location %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= form.submit 'Search' %>
+    </div>
+  <% end %>
+</section>
+<section id="add-restaurant-section">
+  Is a restaurant missing from this list?
+  <%= button_to 'Add a Restaurant', new_restaurant_path, method: 'get' %>
+</section>
