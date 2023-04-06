@@ -35,7 +35,7 @@
       </td>
       <td>
         <%= restaurant.will_not_split %>
-        <%= button_to 'Vote "Won\'t Split"'%>
+        <%= button_to 'Vote "Won\'t Split"', vote_will_not_split_path(restaurant), action: :vote_will_not_split, class: 'wont-split-button'%>
       </td>
       <td>
         <ul><li><%= link_to 'Show Details', restaurant %></li>
