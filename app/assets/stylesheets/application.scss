@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+#restaurants{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#restaurants td, #restaurants th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+#restaurants tr:nth-child(even){background-color: #f2f2f2;}
+
+#restaurants tr:hover {background-color: #ddd;}
+
+#restaurants th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #04AA6D;
+  color: white;
+}
+
+#unorderedList{
+  list-style: none;
+  text-decoration: none;
+}
+
+#heading{
+  background-color: #04AA6D;
+  color: white;
+}
+
+.will-split-button {
+
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+.will-split-button:hover{
+  background-color: green;
+}
+
+.will-not-split-button:hover{
+  background-color: #DC143C;
+}
+
+.will-not-split-button {
+  background-color: #CD5C5C;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+}
+
+input[type=text], select {
+  width: 20%;
+  padding: 12px 10px;
+
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.search-button{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px;
+  width: 20%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
