@@ -4,11 +4,11 @@
 <% if (@restaurants.nil? || @restaurants.empty?) %>
 <div class="card">
   <p>
-    <strong>No restaurants match the search query.</strong>
+
     <% if Restaurant.all.empty? %>
     <strong>There are no restaurants in the table yet. Please add one.</strong>
     <% else %>
-    <strong>No restaurants match the search query.</strong>
+    <strong>No restaurants match the search query. <a href=<%= restaurants_url %>>Show All Restaurants</a></strong>
     <% end %>
   </p>
 </div>
@@ -69,7 +69,7 @@
     <%= form.submit 'Search', disabled: Restaurant.all.empty? %>
   </div>
   <% end %>
-</section>
+</section> <br>
 <section id="add-restaurant-section">
   Is a restaurant missing from this list?
   <%= button_to 'Add a Restaurant', new_restaurant_path, method: 'get' %>
