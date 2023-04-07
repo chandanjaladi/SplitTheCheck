@@ -1,6 +1,6 @@
-<h1>Editing Restaurant</h1>
+<h1 id= "heading"><br>&nbsp;Editing Restaurant<br><br></h1>
 
 <%= render 'form', restaurant: @restaurant %>
 
-<%= link_to 'Show', @restaurant %> |
-<%= link_to 'Back', restaurants_path %>
+<%= button_to 'Show Details', @restaurant, method: 'get', class: 'search-button' %>
+<%= button_to 'Cancel Edit', restaurants_path, method: 'get', class: 'search-button' %>

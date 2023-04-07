@@ -3,25 +3,25 @@
 
 <h1 id = "heading"> <br>&nbsp;Details of Restaurant<br><br></h1>
 <div id="showPage">
-  <strong>Name:</strong>
+  <br>&nbsp;<strong>Name:</strong>
   <%= @restaurant.name %><br><br>
 
 
 
-  <strong>Location:</strong>
+  &nbsp;<strong>Location:</strong>
   <%= @restaurant.location %><br><br>
 
 
 
-  <strong>Will split bill votes:</strong>
+  &nbsp;<strong>Will split bill votes:</strong>
   <%= @restaurant.will_split %><br><br>
 
 
 
-  <strong>Will not split bill votes:</strong>
-  <%= @restaurant.will_not_split %><br>
+  &nbsp;<strong>Will not split bill votes:</strong>
+  <%= @restaurant.will_not_split %><br><br>
 
 </div>
-<br>
+<br><br>
 <%= button_to 'Edit', edit_restaurant_path(@restaurant), method: 'get', class: 'search-button' %>
 <%= button_to 'Show all Restaurants', restaurants_path, method: 'get', class: 'search-button' %>

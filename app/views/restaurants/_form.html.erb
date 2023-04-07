@@ -21,17 +21,18 @@
     <%= form.text_field :location %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :will_split %>
     <%= form.number_field :will_split %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :will_not_split %>
     <%= form.number_field :will_not_split %>
   </div>
 
+<br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "createorupdate" %>
   </div>
 <% end %>

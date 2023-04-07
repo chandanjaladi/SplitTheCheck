@@ -76,8 +76,13 @@
     <%= form.submit 'Search', disabled: Restaurant.all.empty?, class: 'search-button' %>
   </div>
   <% end %>
+  <br><div class="line"></div>
+<div style="display:inline-block;"><strong>OR</strong></div>
+<div class="line"></div><br>
+  <br><div><%= button_to 'List all Restaurants' , restaurants_path, method: 'get', class: 'search-button' %></div>
 </section> <br><hr><br>
 <section id="add-restaurant-section">
+
   <h3><strong>Is a restaurant missing from this list?</strong></h3>
   <div><%= button_to 'Add new Restaurant' , new_restaurant_path, method: 'get', class: 'search-button' %></div>
 </section>

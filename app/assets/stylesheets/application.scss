@@ -18,6 +18,26 @@
   width: 100%;
 }
 
+.createorupdate {
+  background-color: #7393b3;
+  border: none;
+  color: white;
+  padding: 15px;
+  width: 20%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.createorupdate:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #04AA6D;
+}
+
 #restaurants td, #restaurants th {
   border: 1px solid #ddd;
   padding: 8px;
@@ -31,7 +51,7 @@
 #restaurants th {
   padding-top: 12px;
   padding-bottom: 12px;
-  background-color: #04AA6D;
+  background-color: #7393b3;
   color: white;
 }
 
@@ -41,13 +61,12 @@
 }
 
 #heading{
-  background-color: #04AA6D;
+  background-color: #7393b3;
   color: white;
 }
 
 .will-split-button {
-
-  background-color: #04AA6D;
+  background-color: #00a36c;
   border: none;
   color: white;
   padding: 5px;
@@ -84,10 +103,9 @@
   transition-duration: 0.4s;
 }
 
-input[type=text], select {
+input[type=text], input[type=number] {
   width: 20%;
   padding: 12px 10px;
-
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -95,7 +113,7 @@ input[type=text], select {
 }
 
 .search-button{
-  background-color: #04AA6D;
+  background-color: #7393b3;
   border: none;
   color: white;
   padding: 15px;
@@ -111,8 +129,19 @@ input[type=text], select {
 
 .search-button:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #04AA6D;
 }
 
 #showPage{
   font-size: 25px;
+  background-color: #d2cac5;
+  border-radius: 5px;
+}
+
+.line {
+  width: 223px;
+  height: 0;
+  border: 1px solid #C4C4C4;
+  margin: 3px;
+  display:inline-block;
 }

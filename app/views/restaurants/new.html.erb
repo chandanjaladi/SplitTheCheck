@@ -1,7 +1,7 @@
-<h1>New Restaurant</h1>
+<h1 id= "heading"><br>&nbsp;New Restaurant<br><br></h1>
 
 <div id="create-form">
     <%= render 'form', restaurant: @restaurant %>
 </div>
 
-<%= link_to 'Back', restaurants_path %>
+<%= button_to 'Show all Restaurants', restaurants_path, method: 'get', class: 'search-button' %>
