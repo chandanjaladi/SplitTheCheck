@@ -1,13 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  location: MyString
+  name: Cheesecake Factory
+  location: Carrollton
   will_split: 1
   will_not_split: 1
 
 two:
-  name: MyString
-  location: MyString
+  name: Subway
+  location: Carrollton
+  will_split: 1
+  will_not_split: 1
+
+three:
+  name: Chinese Restaurant
+  location: Atlanta
+  will_split: 1
+  will_not_split: 1
+
+four:
+  name: Spain Restaurant
+  location: Atlanta
   will_split: 1
   will_not_split: 1

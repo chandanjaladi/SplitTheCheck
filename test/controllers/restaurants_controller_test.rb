@@ -38,5 +38,26 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to restaurant_url(@restaurant)
   end
 
-  
+  test 'should increase "Will Split" votes on button press' do
+    assert_difference('Restaurant.find(@restaurant.id)[:will_split]', 1) do
+      post vote_will_split_url(@restaurant)
+    end
+
+    assert_redirected_to restaurants_url
+  end
+
+  test 'should increase "Won\'t Split" votes on button press' do
+    assert_difference('Restaurant.find(@restaurant.id)[:will_not_split]', 1) do
+      post vote_will_not_split_url(@restaurant)
+    end
+
+    assert_redirected_to restaurants_url
+  end
+
+  test 'should search restaurants' do
+    get search_url, params: {name: "Cheesecake", location: "Carr"}
+    assert_response :success
+  end
+
+
 end
