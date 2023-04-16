@@ -11373,3 +11373,530 @@ Processing by RestaurantsController#index as HTML
 Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.3ms | Allocations: 8521)
 
 
+Started GET "/restaurants" for ::1 at 2023-04-15 20:09:25 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 20.9ms | Allocations: 10973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 16510)
+Completed 200 OK in 60ms (Views: 37.2ms | ActiveRecord: 1.0ms | Allocations: 19856)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:09:26 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 5225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 8181)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.3ms | Allocations: 8613)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:09:27 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 31.2ms | Allocations: 5213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 8169)
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 0.3ms | Allocations: 8600)
+
+
+Started GET "/restaurants/new" for ::1 at 2023-04-15 20:09:29 -0400
+Processing by RestaurantsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 11.5ms | Allocations: 4785)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 5186)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 8241)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 8819)
+
+
+Started POST "/restaurants" for ::1 at 2023-04-15 20:09:45 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant"=>{"name"=>"Chipotle", "location"=>"Newyork"}, "commit"=>"Create Restaurant"}
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 8.9ms | Allocations: 3323)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 6450)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 8458)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:11:02 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 65.2ms | Allocations: 9870)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 78.2ms | Allocations: 12831)
+Completed 200 OK in 82ms (Views: 79.3ms | ActiveRecord: 2.5ms | Allocations: 13871)
+
+
+Started GET "/restaurants/new" for ::1 at 2023-04-15 20:11:05 -0400
+Processing by RestaurantsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 2.9ms | Allocations: 1100)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4293)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 4729)
+
+
+Started POST "/restaurants" for ::1 at 2023-04-15 20:11:17 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant"=>{"name"=>"Chipotle", "location"=>"Newyork"}, "commit"=>"Create Restaurant"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+  [1m[36mRestaurant Create (4.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chipotle"], ["location", "Newyork"], ["created_at", "2023-04-16 00:11:17.685853"], ["updated_at", "2023-04-16 00:11:17.685853"]]
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/restaurants/10
+Completed 302 Found in 22ms (ActiveRecord: 7.5ms | Allocations: 4732)
+
+
+Started GET "/restaurants/10" for ::1 at 2023-04-15 20:11:17 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 3426)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 0.2ms | Allocations: 4961)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:11:25 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 5509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 8463)
+Completed 200 OK in 19ms (Views: 18.3ms | ActiveRecord: 0.3ms | Allocations: 8886)
+
+
+Started POST "/vote_will_split/10" for ::1 at 2023-04-15 20:11:27 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1587)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+app/controllers/restaurants_controller.rb:64:in `vote_will_split'
+Started POST "/vote_will_split/10" for ::1 at 2023-04-15 20:17:16 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+Completed 500 Internal Server Error in 3ms (Allocations: 1180)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/restaurant.rb:3:in `<class:Restaurant>'
+app/models/restaurant.rb:1:in `<main>'
+app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Started POST "/vote_will_split/10" for ::1 at 2023-04-15 20:18:08 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+Completed 500 Internal Server Error in 1ms (Allocations: 1362)
+
+
+  
+SyntaxError (/home/cj00216/work/SplitTheCheck/app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+  :will_split = 0
+              ^
+/home/cj00216/work/SplitTheCheck/app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end
+  :will_not_split = 0
+                  ^):
+  
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end
+app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Started POST "/vote_will_split/10" for ::1 at 2023-04-15 20:19:01 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+Completed 500 Internal Server Error in 1ms (Allocations: 1286)
+
+
+  
+SyntaxError (/home/cj00216/work/SplitTheCheck/app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+  :will_split = 0 end
+              ^
+/home/cj00216/work/SplitTheCheck/app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end-of-input
+  :will_not_split = 0 end
+                  ^):
+  
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end-of-input
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end-of-input
+app/models/restaurant.rb:3: syntax error, unexpected '=', expecting end
+app/models/restaurant.rb:4: syntax error, unexpected '=', expecting end-of-input
+app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Started POST "/vote_will_split/10" for ::1 at 2023-04-15 20:25:12 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"10"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms | Allocations: 6081)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:65:in `block in vote_will_split'
+app/controllers/restaurants_controller.rb:64:in `vote_will_split'
+Started GET "/restaurants" for ::1 at 2023-04-15 20:25:46 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 5709)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 8786)
+Completed 200 OK in 45ms (Views: 40.0ms | ActiveRecord: 0.4ms | Allocations: 9423)
+
+
+Started GET "/restaurants/new" for ::1 at 2023-04-15 20:25:56 -0400
+Processing by RestaurantsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 2.3ms | Allocations: 1133)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 4324)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+Started POST "/restaurants" for ::1 at 2023-04-15 20:26:03 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant"=>{"name"=>"Chipotle2", "location"=>"Newyork2"}, "commit"=>"Create Restaurant"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+  [1m[36mRestaurant Create (2.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Chipotle2"], ["location", "Newyork2"], ["created_at", "2023-04-16 00:26:03.551077"], ["updated_at", "2023-04-16 00:26:03.551077"]]
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/restaurants/11
+Completed 302 Found in 22ms (ActiveRecord: 4.3ms | Allocations: 4741)
+
+
+Started GET "/restaurants/11" for ::1 at 2023-04-15 20:26:03 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 3204)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 4200)
+
+
+Started GET "/restaurants/11/edit" for ::1 at 2023-04-15 20:26:07 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/edit.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 1.9ms | Allocations: 1155)
+  Rendered restaurants/edit.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1487)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4539)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.1ms | Allocations: 5653)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:26:08 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 40.4ms | Allocations: 5811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 8765)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.4ms | Allocations: 9189)
+
+
+Started POST "/vote_will_not_split/11" for ::1 at 2023-04-15 20:26:10 -0400
+Processing by RestaurantsController#vote_will_not_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"11"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:91:in `set_restaurant'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 1591)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:77:in `block in vote_will_not_split'
+app/controllers/restaurants_controller.rb:76:in `vote_will_not_split'
+Started GET "/restaurants" for ::1 at 2023-04-15 20:36:58 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 11575)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 17112)
+Completed 200 OK in 65ms (Views: 47.2ms | ActiveRecord: 1.1ms | Allocations: 20399)
+
+
+Started GET "/restaurants/new" for ::1 at 2023-04-15 20:37:02 -0400
+Processing by RestaurantsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 12.1ms | Allocations: 3636)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 13.4ms | Allocations: 4032)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 7084)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms | Allocations: 7652)
+
+
+Started POST "/restaurants" for ::1 at 2023-04-15 20:37:08 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant"=>{"name"=>"Chipotle3", "location"=>"Newyork3"}, "commit"=>"Create Restaurant"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1019)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/restaurants_controller.rb:27:in `create'
+Started POST "/restaurants" for ::1 at 2023-04-15 20:44:25 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant"=>{"name"=>"Chipotle3", "location"=>"Newyork3"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/restaurants_controller.rb:28:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:33:in `block in create'
+  [1m[36mRestaurant Create (2.9ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "location", "will_split", "will_not_split", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Chipotle3"], ["location", "Newyork3"], ["will_split", 0], ["will_not_split", 0], ["created_at", "2023-04-16 00:44:25.675861"], ["updated_at", "2023-04-16 00:44:25.675861"]]
+  ↳ app/controllers/restaurants_controller.rb:33:in `block in create'
+  [1m[36mTRANSACTION (19.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:33:in `block in create'
+Redirected to http://localhost:3000/restaurants/12
+Completed 302 Found in 151ms (ActiveRecord: 22.8ms | Allocations: 9552)
+
+
+Started GET "/restaurants/12" for ::1 at 2023-04-15 20:44:25 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3570)
+Completed 200 OK in 19ms (Views: 14.3ms | ActiveRecord: 0.2ms | Allocations: 5365)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:44:29 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 28.8ms | Allocations: 6232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.5ms | Allocations: 9186)
+Completed 200 OK in 51ms (Views: 49.3ms | ActiveRecord: 0.5ms | Allocations: 9609)
+
+
+Started POST "/vote_will_not_split/12" for ::1 at 2023-04-15 20:44:31 -0400
+Processing by RestaurantsController#vote_will_not_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"12"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:81:in `block in vote_will_not_split'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:81:in `block in vote_will_not_split'
+  [1m[36mRestaurant Update (32.4ms)[0m  [1m[33mUPDATE "restaurants" SET "will_not_split" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["will_not_split", 1], ["updated_at", "2023-04-16 00:44:31.763829"], ["id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:81:in `block in vote_will_not_split'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:81:in `block in vote_will_not_split'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 55ms (ActiveRecord: 37.0ms | Allocations: 5750)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:44:31 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 6112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 9067)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.3ms | Allocations: 9497)
+
+
+Started POST "/vote_will_split/12" for ::1 at 2023-04-15 20:44:33 -0400
+Processing by RestaurantsController#vote_will_split as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"12"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:69:in `block in vote_will_split'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:69:in `block in vote_will_split'
+  [1m[36mRestaurant Update (3.6ms)[0m  [1m[33mUPDATE "restaurants" SET "will_split" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["will_split", 1], ["updated_at", "2023-04-16 00:44:33.235442"], ["id", 12]]
+  ↳ app/controllers/restaurants_controller.rb:69:in `block in vote_will_split'
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/restaurants_controller.rb:69:in `block in vote_will_split'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 34ms (ActiveRecord: 18.8ms | Allocations: 5699)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:44:33 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 6112)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 9067)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.3ms | Allocations: 9499)
+
+
+Started GET "/restaurants/12/edit" for ::1 at 2023-04-15 20:44:35 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/edit.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 12.4ms | Allocations: 1197)
+  Rendered restaurants/edit.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1558)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5169)
+Completed 200 OK in 34ms (Views: 24.9ms | ActiveRecord: 0.1ms | Allocations: 6301)
+
+
+Started GET "/restaurants/12" for ::1 at 2023-04-15 20:44:38 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3207)
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 4193)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-15 20:44:39 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:30
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:76
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 36.0ms | Allocations: 6123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.0ms | Allocations: 9080)
+Completed 200 OK in 68ms (Views: 66.3ms | ActiveRecord: 0.6ms | Allocations: 9512)
+
+
+Started GET "/restaurants/12" for ::1 at 2023-04-15 20:44:44 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:95:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 3786)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 4778)
+
+

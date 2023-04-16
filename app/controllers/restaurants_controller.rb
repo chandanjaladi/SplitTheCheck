@@ -24,7 +24,10 @@ class RestaurantsController < ApplicationController
   # POST /restaurants
   # POST /restaurants.json
   def create
+    #params[:will_split][:will_not_split] = 0 if params[:will_split][:will_not_split].blank?
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.will_split = 0
+    @restaurant.will_not_split = 0
 
     respond_to do |format|
       if @restaurant.save
@@ -40,6 +43,7 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
+    #params[:will_split][:will_not_split] = 0 if params[:will_split][:will_not_split].blank?
     respond_to do |format|
       if @restaurant.update(restaurant_params)
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
