@@ -23,5 +23,9 @@
 
 </div>
 <br><br>
+<% if user_signed_in? %>
 <%= button_to 'Edit', edit_restaurant_path(@restaurant), method: 'get', class: 'search-button' %>
+<% else %>
+<h2>Please Login to Edit Restaurant</h2>
+<% end %>
 <%= button_to 'Show all Restaurants', restaurants_path, method: 'get', class: 'search-button' %>

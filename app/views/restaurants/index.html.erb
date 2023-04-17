@@ -44,17 +44,23 @@
       <td><%= restaurant.location %></td>
       <td>
         <strong><%= restaurant.will_split %></strong>
+        <% if user_signed_in? %>
         <%= button_to 'Vote "Will Split"', vote_will_split_path(restaurant), action: :vote_will_split, class: 'will-split-button' %>
+        <% end %>
       </td>
       <td>
         <strong><%= restaurant.will_not_split %></strong>
+        <% if user_signed_in? %>
         <%= button_to 'Vote "Won\'t Split"', vote_will_not_split_path(restaurant), action: :vote_will_not_split, class: 'will-not-split-button'%>
+        <% end %>
       </td>
       <td>
         <ul id = "unorderedList">
           <li id = "unorderedList"><%= link_to 'Show Details', restaurant %></li>
           <li>&nbsp;</li>
+          <% if user_signed_in? %>
           <li id = "unorderedList"><%= link_to 'Edit Restaurant', edit_restaurant_path(restaurant) %></li>
+          <% end %>
           <!-- <li><%= link_to 'Delete', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %> </li> -->
         </ul>
       </td>
@@ -93,7 +99,10 @@
   <br><div><%= button_to 'List all Restaurants' , restaurants_path, method: 'get', class: 'search-button' %></div>
 </section> <br><hr><br>
 <section id="add-restaurant-section">
-
+<% if user_signed_in? %>
   <h3><strong>Is a restaurant missing from this list?</strong></h3>
   <div><%= button_to 'Add new Restaurant' , new_restaurant_path, method: 'get', class: 'search-button' %></div>
+  <% else %>
+  <h2>Please Login to add a new Restaurant</h2>
+  <% end %>
 </section>
