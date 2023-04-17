@@ -21,6 +21,23 @@
   &nbsp;<strong>Will not split bill votes:</strong>
   <%= @restaurant.get_will_not_split_votes %><br><br>
 
+    <h4><strong>&nbsp;Voting History:</strong><h4>
+    <table id="votes">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Vote</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @restaurant.votes.each do |vote| %>
+          <tr>
+            <td><%= current_user.email %></td>
+            <td><%= vote.will_split? %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>
 <br><br>
 <% if user_signed_in? %>

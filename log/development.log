@@ -16176,3 +16176,698 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 4579)
 
 
+Started GET "/users/sign_in" for ::1 at 2023-04-17 02:23:26 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 574)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 4547)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 10593)
+Completed 200 OK in 66ms (Views: 46.2ms | ActiveRecord: 0.7ms | Allocations: 19438)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-17 02:23:28 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 122)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3986)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms | Allocations: 4581)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-17 02:23:29 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 121)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.3ms | Allocations: 835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 3973)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.0ms | Allocations: 4554)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-17 02:23:31 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"cj00216@my.westga.edu", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "cj00216@my.westga.edu"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 397ms (ActiveRecord: 2.0ms | Allocations: 4864)
+
+
+Started GET "/" for ::1 at 2023-04-17 02:23:32 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 76.5ms | Allocations: 25644)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 92.1ms | Allocations: 28663)
+Completed 200 OK in 107ms (Views: 91.2ms | ActiveRecord: 4.4ms | Allocations: 30651)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:23:36 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:38
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2257)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5384)
+Completed 200 OK in 49ms (Views: 33.5ms | ActiveRecord: 0.5ms | Allocations: 7131)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:24:31 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (1.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:38
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2161)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 5473)
+Completed 200 OK in 34ms (Views: 19.7ms | ActiveRecord: 1.5ms | Allocations: 7326)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:24:49 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:38
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 5477)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.5ms | Allocations: 7313)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:25:03 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:37
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 18.5ms | Allocations: 2162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 5474)
+Completed 200 OK in 38ms (Views: 32.8ms | ActiveRecord: 0.5ms | Allocations: 7311)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:25:05 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:37
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1836)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 4950)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.4ms | Allocations: 5962)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:25:06 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:37
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 4936)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 1.1ms | Allocations: 5930)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:25:25 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (1.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:36
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 48.9ms | Allocations: 2156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.2ms | Allocations: 5469)
+Completed 200 OK in 76ms (Views: 71.2ms | ActiveRecord: 2.0ms | Allocations: 7297)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:25:41 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:36
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 15.9ms | Allocations: 2156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 5468)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.4ms | Allocations: 7296)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:26:37 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:34
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 32.8ms | Allocations: 2154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.6ms | Allocations: 5466)
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.6ms | Allocations: 7315)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:26:39 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:34
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4944)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 5939)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:26:40 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:34
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1825)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 4937)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.4ms | Allocations: 5931)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:26:40 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:34
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 4936)
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.3ms | Allocations: 5931)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:27:37 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2160)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 5473)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.4ms | Allocations: 7307)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:28:00 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 5467)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 0.5ms | Allocations: 7295)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:28:26 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 20.7ms | Allocations: 2155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 5467)
+Completed 200 OK in 36ms (Views: 33.6ms | ActiveRecord: 0.4ms | Allocations: 7295)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:32:52 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 130.8ms | Allocations: 24822)
+Completed 200 OK in 140ms (Views: 133.7ms | ActiveRecord: 0.5ms | Allocations: 26650)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:33:15 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 12.7ms | Allocations: 1832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 14353)
+Completed 200 OK in 47ms (Views: 44.6ms | ActiveRecord: 0.4ms | Allocations: 15348)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:33:17 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4936)
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 5930)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:33:36 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 14385)
+Completed 200 OK in 64ms (Views: 61.7ms | ActiveRecord: 0.3ms | Allocations: 15379)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:35:40 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 20.9ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 14777)
+Completed 200 OK in 58ms (Views: 55.0ms | ActiveRecord: 0.4ms | Allocations: 15771)
+
+
+Started GET "/restaurants/2" for ::1 at 2023-04-17 02:35:48 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1824)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 14780)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.3ms | Allocations: 15774)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-17 02:36:01 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 42.6ms | Allocations: 15229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 18240)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 1.3ms | Allocations: 18803)
+
+
+Started POST "/votes?restaurant_id=8&user_id=1&will_split%3F=true" for ::1 at 2023-04-17 02:36:07 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant_id"=>"8", "user_id"=>"1", "will_split?"=>"true"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :authenticity_token[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mVote Create (0.5ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 8], ["will_split?", 1], ["created_at", "2023-04-17 06:36:07.152306"], ["updated_at", "2023-04-17 06:36:07.152306"]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 25ms (ActiveRecord: 5.3ms | Allocations: 8855)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-17 02:36:07 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (1.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 36.9ms | Allocations: 14357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 17369)
+Completed 200 OK in 47ms (Views: 44.1ms | ActiveRecord: 2.6ms | Allocations: 17809)
+
+
+Started POST "/votes?restaurant_id=8&user_id=1&will_split%3F=true" for ::1 at 2023-04-17 02:36:09 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant_id"=>"8", "user_id"=>"1", "will_split?"=>"true"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :authenticity_token[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mVote Create (15.1ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 8], ["will_split?", 1], ["created_at", "2023-04-17 06:36:09.048183"], ["updated_at", "2023-04-17 06:36:09.048183"]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (8.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 41ms (ActiveRecord: 24.0ms | Allocations: 7669)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-17 02:36:09 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 34.3ms | Allocations: 14370)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 17383)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 1.2ms | Allocations: 17823)
+
+
+Started GET "/restaurants/8" for ::1 at 2023-04-17 02:36:10 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 5545)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.4ms | Allocations: 6545)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-17 02:36:14 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.7ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 14369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.2ms | Allocations: 17381)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 2.0ms | Allocations: 17812)
+
+
+Started POST "/votes?restaurant_id=8&user_id=1&will_split%3F=false" for ::1 at 2023-04-17 02:36:16 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "restaurant_id"=>"8", "user_id"=>"1", "will_split?"=>"false"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :authenticity_token[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mVote Create (4.6ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 1], ["restaurant_id", 8], ["will_split?", 0], ["created_at", "2023-04-17 06:36:16.124781"], ["updated_at", "2023-04-17 06:36:16.124781"]]
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/votes_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 40ms (ActiveRecord: 11.3ms | Allocations: 7674)
+
+
+Started GET "/restaurants" for ::1 at 2023-04-17 02:36:16 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:7
+  [1m[36mRestaurant Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:18
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/restaurants/index.html.erb:41
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 2]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 7]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (2.4ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 9]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 10]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 11]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 12]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 13]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/restaurants/index.html.erb:93
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 36.5ms | Allocations: 14380)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.7ms | Allocations: 17393)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 3.5ms | Allocations: 17832)
+
+
+Started GET "/restaurants/8" for ::1 at 2023-04-17 02:36:17 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/restaurants_controller.rb:96:in `set_restaurant'
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 8]]
+  ↳ app/models/restaurant.rb:23:in `get_will_split_votes'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/restaurants/show.html.erb:35
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 2458)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5570)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.4ms | Allocations: 6570)
+
+

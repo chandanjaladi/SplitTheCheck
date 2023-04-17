@@ -18,6 +18,12 @@
   width: 100%;
 }
 
+#votes{
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
+}
+
 .createorupdate {
   background-color: #7393b3;
   border: none;
@@ -58,6 +64,24 @@
 #unorderedList{
   list-style: none;
   text-decoration: none;
+}
+
+#votes td, #votes th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  width: 50%;
+}
+
+#votes tr:nth-child(even){background-color: #f2f2f2;}
+
+#votes tr:hover {background-color: #ddd;}
+
+#votes th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #d2cac5;
+  color: black;
 }
 
 #heading{
