@@ -4320,3 +4320,548 @@ DELETE FROM "users";
 DELETE FROM "votes"[0m
   [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
   [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (34.1ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTruncate Tables (31.1ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.9ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 06:37:41.808334', '2023-04-17 06:37:41.808334');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 06:37:41.808334', '2023-04-17 06:37:41.808334');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 06:37:41.808334', '2023-04-17 06:37:41.808334');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 06:37:41.808334', '2023-04-17 06:37:41.808334');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 06:37:41.814932', '2023-04-17 06:37:41.814932');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 06:37:41.814932', '2023-04-17 06:37:41.814932');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (113629430, 'third@mail.com', '2023-04-17 06:37:41.814932', '2023-04-17 06:37:41.814932');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 1, '2023-04-17 06:37:41.816692', '2023-04-17 06:37:41.816692');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 06:37:41.816692', '2023-04-17 06:37:41.816692')[0m
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+VotesControllerTest: test_should_create_vote
+--------------------------------------------
+  [1m[36mFixtures Load (8.8ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 06:37:41.806342', '2023-04-17 06:37:41.806342');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 06:37:41.806342', '2023-04-17 06:37:41.806342');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 06:37:41.806342', '2023-04-17 06:37:41.806342');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 06:37:41.806342', '2023-04-17 06:37:41.806342');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 06:37:41.809367', '2023-04-17 06:37:41.809367');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 06:37:41.809367', '2023-04-17 06:37:41.809367');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (113629430, 'third@mail.com', '2023-04-17 06:37:41.809367', '2023-04-17 06:37:41.809367');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 1, '2023-04-17 06:37:41.811365', '2023-04-17 06:37:41.811365');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 06:37:41.811365', '2023-04-17 06:37:41.811365')[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name
+-----------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake Factory%')[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Sp%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_return_restaurants_with_matching_location
+--------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atlanta%')[0m
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atl%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_all_restaurants_if_both_name_&_location_are_missing_or_blank
+-----------------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name_&_location
+----------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake%' and location like '%Carrollton%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+RestaurantsControllerTest: test_should_show_restaurant
+------------------------------------------------------
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Load (0.3ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962" for 127.0.0.1 at 2023-04-17 02:37:41 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+Started POST "/votes" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by VotesController#create as HTML
+  Parameters: {"restaurant_id"=>"980190962", "user_id"=>"980190962", "will_split?"=>"true"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms | Allocations: 1844)
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+Started POST "/votes" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"restaurant_id"=>"980190962", "user_id"=>"980190962", "will_split?"=>"true"}
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 13.5ms | Allocations: 6664)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 6717)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms | Allocations: 10478)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_update_restaurant
+--------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+  [1m[36mVote Create (9.6ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 980190962], ["restaurant_id", 980190962], ["will_split?", 1], ["created_at", "2023-04-17 06:37:42.054854"], ["updated_at", "2023-04-17 06:37:42.054854"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 22ms (ActiveRecord: 9.9ms | Allocations: 5128)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms | Allocations: 293)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+RestaurantsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started PATCH "/restaurants/980190962" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory"}, "id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Redirected to http://www.example.com/restaurants/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 836)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RestaurantsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/new" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Started GET "/restaurants" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Processing by RestaurantsController#new as HTML
+  [1m[36mVote Load (1.8ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 113629430]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 281110143]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 298486374]]
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 3436)
+  Rendered restaurants/_form.html.erb (Duration: 4.5ms | Allocations: 2312)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2774)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 126.4ms | Allocations: 26539)
+Completed 200 OK in 132ms (Views: 129.0ms | ActiveRecord: 0.0ms | Allocations: 28449)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_create_restaurant
+--------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 147.4ms | Allocations: 28074)
+Completed 200 OK in 150ms (Views: 145.8ms | ActiveRecord: 2.3ms | Allocations: 28554)
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+RestaurantsControllerTest: test_should_search_restaurants
+---------------------------------------------------------
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 383)
+Started GET "/search?name=Cheesecake&location=Carr" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+Started POST "/restaurants" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#search as HTML
+  Parameters: {"name"=>"Cheesecake", "location"=>"Carr"}
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Processing by RestaurantsController#create as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory"}}
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 113629430]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 281110143]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 298486374]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mCACHE Restaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 2159)
+  [1m[36mRestaurant Create (12.7ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cheesecake Factory"], ["location", "Carrollton"], ["created_at", "2023-04-17 06:37:42.293796"], ["updated_at", "2023-04-17 06:37:42.293796"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/restaurants/980190963
+Completed 302 Found in 16ms (ActiveRecord: 12.8ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 4111)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 4472)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+-----------------------------------------------
+RestaurantsControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------
+RestaurantTest: test_gets_number_of_"will_split"_votes_associated_with_the_restaurant
+-------------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms | Allocations: 291)
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:37:42 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRestaurant Load (1.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Load (8.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/edit.html.erb within layouts/application
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------
+RestaurantTest: test_gets_number_of_"won't_split"_votes_associated_with_the_restaurant
+--------------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendered restaurants/_form.html.erb (Duration: 7.3ms | Allocations: 1995)
+  Rendered restaurants/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4357)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 1.2ms | Allocations: 4880)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTruncate Tables (29.6ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTruncate Tables (16.3ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (9.3ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 06:41:05.608831', '2023-04-17 06:41:05.608831');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 06:41:05.608831', '2023-04-17 06:41:05.608831');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 06:41:05.608831', '2023-04-17 06:41:05.608831');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 06:41:05.608831', '2023-04-17 06:41:05.608831');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 06:41:05.615321', '2023-04-17 06:41:05.615321');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 06:41:05.615321', '2023-04-17 06:41:05.615321');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (113629430, 'third@mail.com', '2023-04-17 06:41:05.615321', '2023-04-17 06:41:05.615321');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 1, '2023-04-17 06:41:05.617662', '2023-04-17 06:41:05.617662');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 06:41:05.617662', '2023-04-17 06:41:05.617662')[0m
+  [1m[36mFixtures Load (8.5ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 06:41:05.620286', '2023-04-17 06:41:05.620286');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 06:41:05.620286', '2023-04-17 06:41:05.620286');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 06:41:05.620286', '2023-04-17 06:41:05.620286');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 06:41:05.620286', '2023-04-17 06:41:05.620286');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 06:41:05.622890', '2023-04-17 06:41:05.622890');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 06:41:05.622890', '2023-04-17 06:41:05.622890');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (113629430, 'third@mail.com', '2023-04-17 06:41:05.622890', '2023-04-17 06:41:05.622890');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 1, '2023-04-17 06:41:05.626773', '2023-04-17 06:41:05.626773');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 06:41:05.626773', '2023-04-17 06:41:05.626773')[0m
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------------------
+RestaurantTest: test_gets_number_of_"won't_split"_votes_associated_with_the_restaurant
+--------------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------------------------------------------------
+RestaurantTest: test_gets_number_of_"will_split"_votes_associated_with_the_restaurant
+-------------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+RestaurantsControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+RestaurantsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/new" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by RestaurantsController#new as HTML
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.1ms | Allocations: 2086)
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/new.html.erb within layouts/application
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/edit.html.erb within layouts/application
+  Rendered restaurants/_form.html.erb (Duration: 7.1ms | Allocations: 4056)
+  Rendered restaurants/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 4522)
+  Rendered restaurants/_form.html.erb (Duration: 4.8ms | Allocations: 2348)
+  Rendered restaurants/edit.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 120.7ms | Allocations: 25317)
+Completed 200 OK in 125ms (Views: 123.3ms | ActiveRecord: 0.1ms | Allocations: 27254)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 129.9ms | Allocations: 26966)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 200 OK in 142ms (Views: 132.5ms | ActiveRecord: 0.0ms | Allocations: 30467)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+RestaurantsControllerTest: test_should_search_restaurants
+---------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/search?name=Cheesecake&location=Carr" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RestaurantsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Processing by RestaurantsController#search as HTML
+  Parameters: {"name"=>"Cheesecake", "location"=>"Carr"}
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+Processing by RestaurantsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 113629430]]
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 281110143]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 113629430]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 298486374]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 281110143]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 298486374]]
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3151)
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5126)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.5ms | Allocations: 5629)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 5152)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.5ms | Allocations: 5633)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_update_restaurant
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_create_restaurant
+--------------------------------------------------------
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms | Allocations: 291)
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Started PATCH "/restaurants/980190962" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms | Allocations: 384)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+Processing by RestaurantsController#update as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory"}, "id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started POST "/restaurants" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Redirected to http://www.example.com/restaurants/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 769)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Processing by RestaurantsController#create as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+VotesControllerTest: test_should_create_vote
+--------------------------------------------
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Create (2.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Cheesecake Factory"], ["location", "Carrollton"], ["created_at", "2023-04-17 06:41:05.959997"], ["updated_at", "2023-04-17 06:41:05.959997"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/restaurants/980190963
+Completed 302 Found in 6ms (ActiveRecord: 2.5ms | Allocations: 944)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name
+-----------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake Factory%')[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Sp%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_return_restaurants_with_matching_location
+--------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atlanta%')[0m
+Started POST "/votes" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atl%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_all_restaurants_if_both_name_&_location_are_missing_or_blank
+-----------------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name_&_location
+----------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake%' and location like '%Carrollton%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Processing by VotesController#create as HTML
+  Parameters: {"restaurant_id"=>"980190962", "user_id"=>"980190962", "will_split?"=>"true"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+Started POST "/votes" for 127.0.0.1 at 2023-04-17 02:41:05 -0400
+Processing by VotesController#create as HTML
+  Parameters: {"restaurant_id"=>"980190962", "user_id"=>"980190962", "will_split?"=>"true"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Create (3.0ms)[0m  [1m[32mINSERT INTO "votes" ("user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 980190962], ["restaurant_id", 980190962], ["will_split?", 1], ["created_at", "2023-04-17 06:41:05.994380"], ["updated_at", "2023-04-17 06:41:05.994380"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/restaurants
+Completed 302 Found in 8ms (ActiveRecord: 3.3ms | Allocations: 1573)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m

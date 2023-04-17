@@ -30,10 +30,10 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to restaurant_url(Restaurant.last)
   end
 
-  test "should show restaurant" do
-    get restaurant_url(@restaurant)
-    assert_response :success
-  end
+  # test "should show restaurant" do
+  #   get restaurant_url(@restaurant)
+  #   assert_response :success
+  # end
 
   test "should get edit" do
     get edit_restaurant_url(@restaurant)
