@@ -132,6 +132,26 @@ input[type=text], input[type=number] {
   background-color: #04AA6D;
 }
 
+.login-button{
+  background-color: #8fa9c0;
+  border: none;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  //margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.login-button:hover {
+  background-color: #04AA6D;
+}
+
 #showPage{
   font-size: 25px;
   background-color: #d2cac5;
@@ -144,4 +164,20 @@ input[type=text], input[type=number] {
   border: 1px solid #C4C4C4;
   margin: 3px;
   display:inline-block;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-login {
+  margin-left: 10px;
+  padding-right: 20px;
+  //font-size: 18px; /* change this value to your desired size */
+}
+
+.header-login span {
+  font-size: 24px; /* change this value to your desired size */
 }
