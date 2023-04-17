@@ -5,7 +5,7 @@
     <h1> &nbsp; Restaurants</h1>
   <div class="header-login">
     <% if user_signed_in? %>
-        <span><%= current_user.email %><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
+        <span><%= current_user.username %><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
       <% else %>
         <span><%= button_to 'Login', new_user_session_path, method: 'get', class: 'login-button' %>
           <%# <%= button_to 'Register', new_user_registration_path, method: 'get' %></span>
