@@ -1,8 +1,10 @@
 require "test_helper"
 
 class RestaurantsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @restaurant = restaurants(:one)
+    @user = users(:one)
   end
 
   test "should get index" do
@@ -11,13 +13,18 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
+
+    sign_in @user
     get new_restaurant_url
     assert_response :success
   end
 
   test "should create restaurant" do
+    get edit_restaurant_url(@restaurant)
+    assert_redirected_to new_user_session_url
+    sign_in @user
     assert_difference('Restaurant.count') do
-      post restaurants_url, params: { restaurant: { location: @restaurant.location, name: @restaurant.name, will_not_split: @restaurant.get_will_not_split_votes, will_split: @restaurant.get_will_split_votes } }
+      post restaurants_url, params: { restaurant: { location: @restaurant.location, name: @restaurant.name } }
     end
 
     assert_redirected_to restaurant_url(Restaurant.last)
@@ -30,11 +37,17 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get edit" do
     get edit_restaurant_url(@restaurant)
+    assert_redirected_to new_user_session_url
+    sign_in @user
+    get edit_restaurant_url(@restaurant)
     assert_response :success
   end
 
   test "should update restaurant" do
-    patch restaurant_url(@restaurant), params: { restaurant: { location: @restaurant.location, name: @restaurant.name, will_not_split: @restaurant.get_will_not_split_votes, will_split: @restaurant.get_will_split_votes } }
+    get edit_restaurant_url(@restaurant)
+    assert_redirected_to new_user_session_url
+    sign_in @user
+    patch restaurant_url(@restaurant), params: { restaurant: { location: @restaurant.location, name: @restaurant.name } }
     assert_redirected_to restaurant_url(@restaurant)
   end
 

@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i[ show edit update]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -27,8 +27,8 @@ class RestaurantsController < ApplicationController
   def create
     #params[:will_split][:will_not_split] = 0 if params[:will_split][:will_not_split].blank?
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.will_split = 0
-    @restaurant.will_not_split = 0
+    # @restaurant.will_split = 0
+    # @restaurant.will_not_split = 0
 
     respond_to do |format|
       if @restaurant.save

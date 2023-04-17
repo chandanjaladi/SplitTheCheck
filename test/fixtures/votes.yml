@@ -3,7 +3,7 @@
 one:
   user: one
   restaurant: one
-  will_split?: false
+  will_split?: true
 
 two:
   user: two

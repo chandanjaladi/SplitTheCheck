@@ -1,5 +1,11 @@
-<h2>Create account</h2>
-
+<div id="heading">
+  <br>
+  <div class="header">
+    <h1> &nbsp; Create Account</h1>
+  </div>
+  <br>
+</div>
+<br>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -24,11 +30,13 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit "create" %>
+    <%= f.submit "Create account", class: "search-button" %>
   </div>
+  <br><br>
 <% end %>
+<%= button_to 'List all Restaurants' , restaurants_path, method: 'get', class: 'search-button' %>
 
 <%= render "devise/shared/links" %>
