@@ -1796,3 +1796,430 @@ Completed 200 OK in 17ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 555
 RestaurantTest::SearchTest: test_returns_all_restaurants_if_both_name_&_location_are_missing_or_blank
 -----------------------------------------------------------------------------------------------------
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants"[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "will_split" integer, "will_not_split" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes"[0m
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (1.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+, CONSTRAINT "fk_rails_c9b3bef597"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230417005304)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230403120229),
+(20230416011117),
+(20230417004011);
+
+[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-04-17 01:22:56.500938"], ["updated_at", "2023-04-17 01:22:56.500938"]]
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "129fc0ee3ad51bd5098baa671a7780ad69d73953"], ["created_at", "2023-04-17 01:22:56.509377"], ["updated_at", "2023-04-17 01:22:56.509377"]]
+  [1m[36mTRANSACTION (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "schema_sha1"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants"[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "will_split" integer, "will_not_split" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants"[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location" varchar, "will_split" integer, "will_not_split" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "username" varchar)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes"[0m
+  [1m[35m (3.7ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[35m (7.3ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+, CONSTRAINT "fk_rails_c9b3bef597"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (6.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230417005304)[0m
+  [1m[35m (5.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230403120229),
+(20230416011117),
+(20230417004011);
+
+[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "avotes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-04-17 01:22:56.806404"], ["updated_at", "2023-04-17 01:22:56.806404"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_user_id" ON "avotes" ("user_id")[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "tindex_avotes_on_restaurant_id" ON "avotes" ("restaurant_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "avotes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "votes"[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "129fc0ee3ad51bd5098baa671a7780ad69d73953"], ["created_at", "2023-04-17 01:22:56.830420"], ["updated_at", "2023-04-17 01:22:56.830420"]]
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (13.0ms)[0m  [1m[35mDROP TABLE "votes"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" integer NOT NULL PRIMARY KEY, "user_id" integer NOT NULL, "restaurant_id" integer NOT NULL, "will_split?" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_d97ed63bf1"
+FOREIGN KEY ("restaurant_id")
+  REFERENCES "restaurants" ("id")
+, CONSTRAINT "fk_rails_c9b3bef597"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE INDEX "index_votes_on_restaurant_id" ON "votes" ("restaurant_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_votes_on_user_id" ON "votes" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "votes" ("id","user_id","restaurant_id","will_split?","created_at","updated_at")
+                     SELECT "id","user_id","restaurant_id","will_split?","created_at","updated_at" FROM "avotes"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "avotes"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230417005304)[0m
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230403120229),
+(20230416011117),
+(20230417004011);
+
+[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-04-17 01:22:56.916671"], ["updated_at", "2023-04-17 01:22:56.916671"]]
+  [1m[36mFixtures Load (8.9ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 01:22:56.891344', '2023-04-17 01:22:56.891344');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 01:22:56.891344', '2023-04-17 01:22:56.891344');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 01:22:56.891344', '2023-04-17 01:22:56.891344');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 01:22:56.891344', '2023-04-17 01:22:56.891344');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 01:22:56.902633', '2023-04-17 01:22:56.902633');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 01:22:56.902633', '2023-04-17 01:22:56.902633');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 0, '2023-04-17 01:22:56.909910', '2023-04-17 01:22:56.909910');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 01:22:56.909910', '2023-04-17 01:22:56.909910')[0m
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_create_restaurant
+--------------------------------------------------------
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "129fc0ee3ad51bd5098baa671a7780ad69d73953"], ["created_at", "2023-04-17 01:22:56.942504"], ["updated_at", "2023-04-17 01:22:56.942504"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (7.7ms)[0m  [1m[31mDELETE FROM "restaurants";
+DELETE FROM "users";
+DELETE FROM "votes";
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (980190962, 'Cheesecake Factory', 'Carrollton', '2023-04-17 01:22:56.986997', '2023-04-17 01:22:56.986997');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (298486374, 'Subway', 'Carrollton', '2023-04-17 01:22:56.986997', '2023-04-17 01:22:56.986997');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (113629430, 'Chinese Restaurant', 'Atlanta', '2023-04-17 01:22:56.986997', '2023-04-17 01:22:56.986997');
+INSERT INTO "restaurants" ("id", "name", "location", "created_at", "updated_at") VALUES (281110143, 'Spain Restaurant', 'Atlanta', '2023-04-17 01:22:56.986997', '2023-04-17 01:22:56.986997');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (980190962, 'chandan@westga.com', '2023-04-17 01:22:56.992633', '2023-04-17 01:22:56.992633');
+INSERT INTO "users" ("id", "email", "created_at", "updated_at") VALUES (298486374, 'temp@gmail.com', '2023-04-17 01:22:56.992633', '2023-04-17 01:22:56.992633');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, 0, '2023-04-17 01:22:57.000336', '2023-04-17 01:22:57.000336');
+INSERT INTO "votes" ("id", "user_id", "restaurant_id", "will_split?", "created_at", "updated_at") VALUES (298486374, 298486374, 298486374, 0, '2023-04-17 01:22:57.000336', '2023-04-17 01:22:57.000336')[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+----------------------------------------------
+RestaurantsControllerTest: test_should_get_new
+----------------------------------------------
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+Started POST "/restaurants" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/new" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory", "will_not_split"=>"1", "will_split"=>"0"}}
+Processing by RestaurantsController#new as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 1866)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "restaurants"[0m
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 1867)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------------------------------
+RestaurantsControllerTest: test_should_search_restaurants
+---------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/search?name=Cheesecake&location=Carr" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------
+RestaurantsControllerTest: test_should_get_edit
+-----------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants/980190962/edit" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+Processing by RestaurantsController#search as HTML
+  Parameters: {"name"=>"Cheesecake", "location"=>"Carr"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 174)
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.1ms | Allocations: 397)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------------
+RestaurantsControllerTest: test_should_show_restaurant
+------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/restaurants/980190962" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------
+RestaurantsControllerTest: test_should_update_restaurant
+--------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+Started PATCH "/restaurants/980190962" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/show.html.erb within layouts/application
+Processing by RestaurantsController#update as HTML
+  Parameters: {"restaurant"=>{"location"=>"Carrollton", "name"=>"Cheesecake Factory", "will_not_split"=>"1", "will_split"=>"0"}, "id"=>"980190962"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.1ms | Allocations: 389)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+------------------------------------------------
+RestaurantsControllerTest: test_should_get_index
+------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+Started GET "/restaurants" for 127.0.0.1 at 2023-04-16 21:22:57 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  Rendering layout layouts/application.html.erb
+  Rendering restaurants/index.html.erb within layouts/application
+  [1m[36mRestaurant Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 113629430]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 281110143]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 298486374]]
+  [1m[36mVote Load (0.1ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."restaurant_id" = ?[0m  [["restaurant_id", 980190962]]
+  [1m[36mCACHE Restaurant Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "restaurants" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered restaurants/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 3615)
+  Rendered restaurants/show.html.erb within layouts/application (Duration: 72.7ms | Allocations: 5738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 139.2ms | Allocations: 27472)
+Completed 200 OK in 147ms (Views: 143.5ms | ActiveRecord: 0.5ms | Allocations: 29361)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------
+VotesControllerTest: test_should_create_vote
+--------------------------------------------
+  [1m[36mVote Load (0.2ms)[0m  [1m[34mSELECT "votes".* FROM "votes" WHERE "votes"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+--------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_return_restaurants_with_matching_location
+--------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 113629430], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atlanta%')[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (location like '%Atl%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_all_restaurants_if_both_name_&_location_are_missing_or_blank
+-----------------------------------------------------------------------------------------------------
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+-----------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name
+-----------------------------------------------------------------------
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 205.8ms | Allocations: 27912)
+Completed 200 OK in 212ms (Views: 208.0ms | ActiveRecord: 0.3ms | Allocations: 29909)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake Factory%')[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 281110143], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Sp%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+----------------------------------------------------------------------------------
+RestaurantTest::SearchTest: test_returns_restaurants_with_matching_name_&_location
+----------------------------------------------------------------------------------
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT ?[0m  [["id", 980190962], ["LIMIT", 1]]
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE (name like '%Cheesecake%' and location like '%Carrollton%')[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
