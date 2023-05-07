@@ -1,5 +1,27 @@
 <h1>Commenting on <%= @restaurant.name %></h1>
+<%= form_with(model: @comment, id: 'create-form') do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-<%= render 'form', comment: @comment %>
+      <ul>
+        <% @comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <section class="card">
+    <div class="field">
+        <h2><%= form.label :body, 'Comment' %></h2>
+        <%= form.text_area :body, class: 'comment-area' %>
+    </div>
+    <%= hidden_field(:comment, :user_id) %>
+    <%= hidden_field(:comment, :restaurant_id) %>
+  </section>
 
-<%= button_to 'Cancel', restaurant_path(@restaurant), method: :get %>
+  <div class="actions">
+    <%= form.submit %>
+    <a href="<%= restaurant_path(@restaurant) %>"><button>Cancel</button></a>
+  </div>
+<% end %>

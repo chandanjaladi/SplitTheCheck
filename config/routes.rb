@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
   resources :comments, only: [:new, :create]
   #resources :votes
   devise_for :users
