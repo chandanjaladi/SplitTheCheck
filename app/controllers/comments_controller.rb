@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_restaurant
 
   # GET /comments
   # GET /comments.json
@@ -14,8 +15,15 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-    @comment = Comment.new(restaurant_id: params[:restaurant_id], user_id: params[:user_id])
-    @restaurant = @comment.restaurant
+    if (@restaurant == nil)
+      respond_to do |format|
+        format.html { redirect_to restaurants_url, notice: "Please select a restaurant to comment on." }
+      end
+
+      return
+    end
+
+    @comment = Comment.new()
   end
 
   # GET /comments/1/edit
@@ -25,8 +33,17 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
+    if (@restaurant == nil)
+      respond_to do |format|
+        format.html { redirect_to restaurants_url, notice: "Please select a restaurant to comment on." }
+      end
+
+      return
+    end
+
+    params[:comment].merge!({restaurant_id: @restaurant.id, user_id: current_user.id})
     @comment = Comment.new(comment_params)
-    @restaurant = @comment.restaurant
+
 
     respond_to do |format|
       if @comment.save
@@ -73,4 +90,12 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:user_id, :restaurant_id, :body)
     end
+
+    def set_restaurant
+      session[:restaurant_id] = params[:restaurant_id] || session[:restaurant_id]
+      @restaurant = Restaurant.find(session[:restaurant_id])
+    rescue
+      @restaurant = nil
+    end
+
 end

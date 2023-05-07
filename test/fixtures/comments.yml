@@ -2,10 +2,10 @@
 
 one:
   user: one
-  restaurant: one
-  body: MyText
+  restaurant: gg_e
+  body: I am number one!
 
 two:
   user: two
-  restaurant: two
-  body: MyText
+  restaurant: gg_e
+  body: Who do I work for?

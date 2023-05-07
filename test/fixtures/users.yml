@@ -6,10 +6,17 @@
 #
 one:
   email: "chandan@westga.com"
+  username: "Mr. One"
 
 
 two:
   email: "temp@gmail.com"
+  username: "Number 2"
 
 three:
   email: "third@mail.com"
+  username: "Cookie"
+
+four:
+  email: "cj00216@my.westga.edu"
+  username: "chandan"
