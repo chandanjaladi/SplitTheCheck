@@ -1,18 +1,18 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 #restaurants{
   border-collapse: collapse;
   width: 100%;
@@ -67,10 +67,35 @@
 }
 
 #votes td, #votes th {
-  border: 1px solid #ddd;
+  border: 1px solid black;
   padding: 8px;
   text-align: center;
   width: 50%;
+}
+
+#votes{
+  table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td, th {
+  border: none;
+  padding: 10px; /* Add padding to the cells */
+  border-bottom: 1px solid black; /* Add a bottom border to the cells */
+}
+
+td:first-child, th:first-child {
+  border-left: none; /* Remove the left border of the first cell */
+}
+
+td:last-child, th:last-child {
+  border-right: none; /* Remove the right border of the last cell */
+}
+
+tr:first-child td, tr:first-child th {
+  border-top: none; /* Remove the top border of the first row */
+}
 }
 
 #votes tr:nth-child(even){background-color: #f2f2f2;}
@@ -82,6 +107,10 @@
   padding-bottom: 12px;
   background-color: #d2cac5;
   color: black;
+}
+
+#votes td{
+  font-size: 18px;
 }
 
 #heading{
@@ -182,6 +211,24 @@ input[type=text], input[type=number], input[type=email], input[type=password] {
   border-radius: 5px;
 }
 
+#summaryPage{
+  font-size: 25px;
+  background-color: #d2cac5;
+  border-radius: 5px;
+  padding: 1.5em;
+
+  table{
+    font-size: 20px;
+    border-collapse: separate;
+    border-spacing: 10px;
+  }
+
+  td th{
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
 .line {
   width: 8%;
   height: 0;
@@ -207,12 +254,12 @@ input[type=text], input[type=number], input[type=email], input[type=password] {
 }
 
 #comments-output-box {
-    width: 75%;
-    min-height: 6em;
-    text-align: left;
-
+  width: 75%;
+  min-height: 8em;
+  text-align: left;
+  border-radius: 5px;
 }
 
 .star-button {
-    float: right;
+  float: right;
 }

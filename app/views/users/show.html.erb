@@ -1,6 +1,12 @@
-<h1>Your Summary</h1>
+<div id="heading">
+  <br>
+<h1>&nbsp;Your Summary</h1>
+<br>
+</div><br><br>
 
-<h2>Comments</h2>
+<div id="summaryPage">
+<h2>&nbsp;Comments</h2>
+
 <table>
   <thead>
     <tr>
@@ -17,8 +23,10 @@
     <% end %>
   </tbody>
 </table>
-
-<h2>Votes</h2>
+</div>
+<br><br>
+<div id="summaryPage">
+<h2>&nbsp;Votes</h2>
 <table>
   <thead>
     <tr>
@@ -35,8 +43,10 @@
     <% end %>
   </tbody>
 </table>
-
-<h2>Favorites</h2>
+</div>
+<br><br>
+<div id="summaryPage">
+<h2>&nbsp;Favorites</h2>
 <section>
   <ul>
     <% @user.favorites.each do |favorite| %>
@@ -44,5 +54,6 @@
     <% end %>
   </ul>
 </section>
+</div>
 
 <br><div><%= button_to 'List all Restaurants' , restaurants_path, method: 'get', class: 'search-button' %></div>
