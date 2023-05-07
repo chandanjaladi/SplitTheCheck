@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :validatable
   validates :username, uniqueness: true, presence: true
   has_many :votes, dependent: :destroy
+  has_many :favorites
+  has_many :restaurants, through: :favorites
 end
