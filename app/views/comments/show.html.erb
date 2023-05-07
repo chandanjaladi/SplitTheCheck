@@ -1,19 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @comment.user_id %>
-</p>
+<h2><%= @comment.restaurant.name %></h2>
 
-<p>
-  <strong>Restaurant:</strong>
-  <%= @comment.restaurant_id %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @comment.body %>
-</p>
-
+<p><%= @comment %></p>
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

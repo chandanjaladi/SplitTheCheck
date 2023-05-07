@@ -5,7 +5,8 @@
     <h1> &nbsp; Restaurants</h1>
   <div class="header-login">
     <% if user_signed_in? %>
-        <span><%= current_user.username %> <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
+        <%= current_user.email %>
+        <span><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
       <% else %>
         <span><%= button_to 'Login', new_user_session_path, method: 'get', class: 'login-button' %>
           <%# <%= button_to 'Register', new_user_registration_path, method: 'get' %></span>
@@ -33,6 +34,9 @@
       <th>Location</th>
       <th>Will Split</th>
       <th>Will Not Split</th>
+      <% if user_signed_in? %>
+        <th></th>
+      <% end %>
       <th></th>
     </tr>
   </thead>
@@ -54,6 +58,11 @@
         <%= button_to 'Vote "Won\'t Split"', votes_path(user_id: current_user, restaurant_id: restaurant, will_split?: false), class: 'will-not-split-button'%>
         <% end %>
       </td>
+      <% if user_signed_in? %>
+              <td>
+                <%= button_to 'Add Comment', new_comment_path, params: {user_id: current_user, restaurant_id: restaurant}, method: :get %>
+              </td>
+      <% end %>
       <td>
         <ul id = "unorderedList">
           <li id = "unorderedList"><%= link_to 'Show Details', restaurant %></li>

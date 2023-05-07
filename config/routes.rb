@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :comments
+  resources :comments, only: [:new, :create]
   #resources :votes
   devise_for :users
   root to: 'restaurants#index'

@@ -11,15 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id %>
-  </div>
+  <%= hidden_field(:comment, :user_id) %>
+
+  
+  <%= hidden_field(:comment, :restaurant_id) %>
 
   <div class="field">
     <%= form.label :body %>

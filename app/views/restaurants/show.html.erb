@@ -20,6 +20,11 @@
 
   &nbsp;<strong>Will not split bill votes:</strong>
   <%= @restaurant.get_will_not_split_votes %><br><br>
+  <h2>&nbsp;Comments</h2>
+  &nbsp;<textarea readonly id="comments-output-box"><% @restaurant.comments.each do |comment| %><%= "#{comment}\n" %><% end %></textarea>
+  <% if user_signed_in? %>
+    &nbsp;&nbsp;<%= button_to 'Add Comment', new_comment_path, params: {user_id: current_user, restaurant_id: @restaurant}, method: :get,class: 'search-button' %>
+  <% end %>
 
     <h4><strong>&nbsp;Voting History:</strong><h4>
     <table id="votes">
@@ -43,6 +48,6 @@
 <% if user_signed_in? %>
 <%= button_to 'Edit', edit_restaurant_path(@restaurant), method: 'get', class: 'search-button' %>
 <% else %>
-<h2>Please Login to Edit Restaurant</h2>
+<h2>Please Login to Edit/Comment this Restaurant</h2>
 <% end %>
 <%= button_to 'Show all Restaurants', restaurants_path, method: 'get', class: 'search-button' %>
