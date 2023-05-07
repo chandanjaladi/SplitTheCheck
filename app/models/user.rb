@@ -6,4 +6,9 @@ class User < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :favorites
   has_many :restaurants, through: :favorites
+  has_many :comments, dependent: :destroy
+
+  def favorited? restaurant_id
+    restaurants.include? restaurant_id
+  end
 end

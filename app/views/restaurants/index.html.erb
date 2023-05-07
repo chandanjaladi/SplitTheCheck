@@ -4,9 +4,9 @@
   <div class="header">
     <h1> &nbsp; Restaurants</h1>
   <div class="header-login">
-    <% if user_signed_in? %>
+    <% if user_signed_in? %><span>
         <%= current_user.email %>
-        <span><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'login-button' %></span>
       <% else %>
         <span><%= button_to 'Login', new_user_session_path, method: 'get', class: 'login-button' %>
           <%# <%= button_to 'Register', new_user_registration_path, method: 'get' %></span>
@@ -44,7 +44,23 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
     <tr>
-      <td> <h4><%= restaurant.name %></h4> </td>
+      <td>
+        <h4>
+        <%= restaurant.name %>
+        <% if user_signed_in? %>
+        <% if current_user.favorited? restaurant %>
+          <%= form_with url: favorites_path(user_id: current_user, restaurant_id: restaurant), method: :delete do |form| %>
+            <%= image_submit_tag 'heart-fill.svg', class: 'star-button' %>
+          <% end %>
+        <% else %>
+          <%= form_with url: favorites_path(user_id: current_user, restaurant_id: restaurant), method: :post do |form| %>
+            <%= image_submit_tag 'heart-nofill.svg', class: 'star-button' %>
+          <% end %>
+        <%end%>
+              <%end%>
+      </h4>
+    </td>
+
       <td><%= restaurant.location %></td>
       <td>
         <strong><%= restaurant.get_will_split_votes %></strong>
@@ -113,5 +129,14 @@
   <div><%= button_to 'Add new Restaurant' , new_restaurant_path, method: 'get', class: 'search-button' %></div>
   <% else %>
   <h2>Please Login to add a new Restaurant</h2>
+  <% end %>
+</section>
+<br><hr><br>
+<section id="add-restaurant-section">
+<% if user_signed_in? %>
+  <h3><strong>View account summary!</strong></h3>
+  <div><%= button_to 'Summary' , user_path(current_user), method: 'get', class: 'search-button' %></div>
+  <% else %>
+  <h2>Please Login to view account summary</h2>
   <% end %>
 </section>
