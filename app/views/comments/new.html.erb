@@ -14,14 +14,14 @@
   <section class="card">
     <div class="field">
         <h2><%= form.label :body, 'Comment' %></h2>
-        <%= form.text_area :body, class: 'comment-area' %>
+        <%= form.text_area :body, class: 'comment-area',id:'comments-output-box' %>
     </div>
     <%= hidden_field(:comment, :user_id) %>
     <%= hidden_field(:comment, :restaurant_id) %>
   </section>
 
   <div class="actions">
-    <%= form.submit %>
-    <a href="<%= restaurant_path(@restaurant) %>"><button>Cancel</button></a>
+    <%= form.submit class: "search-button"%><br><br>
+    <a href="<%= restaurant_path(@restaurant) %>" class="cancel-button">Cancel</a>
   </div>
 <% end %>
